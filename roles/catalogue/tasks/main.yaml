@@ -7,3 +7,9 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: user
+
+- name: creating /app directory
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-diretory
+    
