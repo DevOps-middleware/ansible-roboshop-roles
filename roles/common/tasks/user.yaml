@@ -1,0 +1,18 @@
+- name: check if roboshop user is present or not
+  ansible.sbuiltin.command: id roboshop
+  register: out
+
+- name: print the output of roboshop user
+  ansible.builtin.debug:
+    msg: "{{out}}"
+
+- name: print the exit status of roboshop user
+  ansible.builtin.debug:
+    msg: "{{out.rc}}"
+
+- name: creating roboshop user
+  ansible.builtin.user:
+    name: roboshop
+  when out.rc != 0
+
+  
