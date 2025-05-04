@@ -27,4 +27,16 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: restart-service
+
+- name: create a mongodb repo
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb.yaml
+
+- name: installing mongodb shell
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb-shell
     
+
+
