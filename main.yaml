@@ -1,7 +1,7 @@
 - name: this playbook is to configure roboshop
-  hosts: mongodb 
+  hosts: "{{component}}"
   become: yes
   roles:
-    - mongodb
+    - "{{component}}"
 
     
