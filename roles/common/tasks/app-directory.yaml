@@ -1,5 +1,5 @@
 - name: check if /app directory present  or not
-  anaible.builtin.stat:
+  ansible.builtin.stat:
     path: /app
   register: directory
 
@@ -17,5 +17,5 @@
     state: directory
   when: directory.stat.exists == false
 
-  
+
 
