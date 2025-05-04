@@ -1,0 +1,42 @@
+- name: setup and install nodejs
+  ansible.builtin.import_role:
+   name: common
+   tasks_from: nodejs
+
+- name: creating roboshop user
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: user
+
+- name: creating /app directory
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: app-directory
+
+- name: crate a user.service file
+  ansible.builtin.copy:
+    src: user.service
+    dest: /etc/systemd/system
+
+- name: daemon reload
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: daemon-reload
+
+- name: staring and enabling the user service
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: restart-service
+
+- name: create a mongodb repo
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb.yaml
+
+- name: installing mongodb shell
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: mongodb-shell
+
+- name: loading the schema
+  ansible.builtin.shell: mongo --host 172.31.82.160 < /app/schema/user.js
