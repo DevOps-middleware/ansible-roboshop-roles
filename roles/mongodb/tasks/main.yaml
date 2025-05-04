@@ -1,4 +1,6 @@
 - name: copying the mongodb repo
-  ansible.builtin.include_role:
-    common:
-      tasks_from: mongodb.yaml
+  ansible.builtin.import_role:
+   name: common
+   tasks_from: mongodb
+
+
