@@ -37,6 +37,8 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: mongodb-shell
-    
+
+- name: loading schema 
+  ansible.builtin.shell: mongo --host 172.31.82.160 </app/schema/catalogue.js
 
 
