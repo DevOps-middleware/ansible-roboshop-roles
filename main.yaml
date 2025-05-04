@@ -1,0 +1,7 @@
+- name: this playbook is to configure roboshop
+  hosts: mongodb 
+  become: yes
+  roles:
+    - mongodb
+
+    

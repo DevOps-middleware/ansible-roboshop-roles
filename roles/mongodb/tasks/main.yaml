@@ -1,0 +1,5 @@
+- name: copying the mongodb repo
+  ansible.bulin.include_roles:
+    common:
+      include_tasks: mongodb.yaml
+      
