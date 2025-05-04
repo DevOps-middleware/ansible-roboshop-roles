@@ -23,3 +23,8 @@
     name: common
     tasks_from: daemon-reload
 
+- name: staring and enabling the catalogue service
+  ansible.builtin.import_role:
+    name: common
+    tasks_from: restart-service
+    
