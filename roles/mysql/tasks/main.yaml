@@ -1,7 +1,7 @@
 - name: disabling mysql
   ansible.builtin.service:
     name: mysql
-    state: disabled
+    enabled: no
 
 - name: copying mysql repo
   ansible.builtin.copy:
