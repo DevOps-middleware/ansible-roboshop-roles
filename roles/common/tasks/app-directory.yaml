@@ -17,5 +17,16 @@
     state: directory
   when: directory.stat.exists == false
 
+- name: downlaod the application code in /app directory
+  ansible.builtin.get_url:
+    url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+    dest: /tmp
+    
+- name: unarchive the zip file
+  ansible.builtin.unarchive:
+    src: /tmp/catalogue.zip
+    dest: /app
+
+
 
 
