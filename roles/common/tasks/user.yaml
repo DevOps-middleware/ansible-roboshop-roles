@@ -1,5 +1,5 @@
 - name: check if roboshop user is present or not
-  ansible.sbuiltin.command: id roboshop
+  ansible.builtin.command: id roboshop
   register: out
 
 - name: print the output of roboshop user
