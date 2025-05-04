@@ -1,7 +1,5 @@
 - name: disabling mysql
-  ansible.builtin.service:
-    name: mysql
-    enabled: no
+  ansible.builtin.shell: yum module disable mysql -y 
 
 - name: copying mysql repo
   ansible.builtin.copy:
