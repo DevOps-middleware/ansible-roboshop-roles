@@ -1,0 +1,4 @@
+- name: daemon reload
+  ansible.bulitin.systemd:
+    daemon-reload: true
+
