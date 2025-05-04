@@ -6,4 +6,4 @@
 - name: creating roboshop user
   ansible.builtin.import_role:
     name: common
-    tasks_form: user
+    tasks_from: user
