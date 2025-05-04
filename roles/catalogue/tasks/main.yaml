@@ -13,3 +13,9 @@
     name: common
     tasks_from: app-directory
 
+- name: downlaod the application code in /app directory
+  ansible.builtin.get_url:
+    url: https://roboshop-builds.s3.amazonaws.com/catalogue.zip
+    dest: /tmp
+
+    
