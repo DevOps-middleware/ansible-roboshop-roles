@@ -1,5 +1,5 @@
 - name: disabling mysql
-  ansible:builtin.service:
+  ansible.builtin.service:
     name: mysql
     state: disabled
 
