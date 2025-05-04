@@ -8,7 +8,7 @@
 
 - name: installing mysql server
   ansible.builtin.yum:
-    name: mysqld
+    name: mysql-community-server
     state: installed
 
 - name: starting mysqld service
