@@ -3,4 +3,9 @@
    name: common
    tasks_from: mongodb
 
+- name: installling mongodb 
+  ansible.builtin.yum:
+    name: mongodb-org
+    state: installed
+    enabled: yes
 
