@@ -12,3 +12,8 @@
   ansible.builtin.import_role:
     name: common
     tasks_from: app-directory
+
+- name: crate a catalogue.service file
+  ansible.builtin.copy:
+    src: catalogue.service
+    dest: /etc/systemd/system
