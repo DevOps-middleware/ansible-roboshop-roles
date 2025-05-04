@@ -13,7 +13,7 @@
     name: common
     tasks_from: app-directory
 
-- name: crate a user.service file
+- name: crate a cart.service file
   ansible.builtin.copy:
     src: cart.service
     dest: /etc/systemd/system
