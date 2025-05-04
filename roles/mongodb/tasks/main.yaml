@@ -7,5 +7,5 @@
   ansible.builtin.yum:
     name: mongodb-org
     state: installed
-    enabled: yes
+  
 
